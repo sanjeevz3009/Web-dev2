@@ -1,1 +1,1 @@
-# JavaScript, Node.JS, HTML & CSS.
+# JavaScript, Node.js, HTML & CSS.
