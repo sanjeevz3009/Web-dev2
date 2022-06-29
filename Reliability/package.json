@@ -1,0 +1,21 @@
+{
+  "name": "reliability",
+  "version": "1.0.0",
+  "description": "Linting, unit testing, Git and Github",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "lint": "eslint ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.18.0",
+    "eslint-config-portsoc": "^1.0.0",
+    "jest": "^28.1.1"
+  },
+  "type": "module",
+  "dependencies": {
+    "eslint-plugin-jest": "^26.5.3"
+  }
+}
