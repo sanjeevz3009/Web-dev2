@@ -1,0 +1,30 @@
+<!doctype html>
+<title>Ex1 Digital Clock</title>
+
+<script>
+class DigitalClock extends HTMLElement {
+  constructor() {
+    super();
+
+    const shadow = this.attachShadow({ mode: 'closed' });
+    shadow.textContent = '00:00:00';
+
+    window.setInterval(() => {
+      shadow.textContent = new Date().toLocaleTimeString();
+    }, 1000);
+  }
+}
+
+customElements.define('digital-clock', DigitalClock);
+</script>
+
+<h1>Custom Element Ex1</h1>
+<h2>A <code>&lt;digital-clock&gt;</code> element</h2>
+
+<p>
+  In this example we define a <code>&lt;digital-clock&gt;</code>
+  custom element that shows the current time by using an interval
+  timer that updates the text content of the element once per second.
+
+<p>
+  The time now is <digital-clock></digital-clock>.

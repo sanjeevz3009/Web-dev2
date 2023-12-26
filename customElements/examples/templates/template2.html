@@ -1,0 +1,25 @@
+<!doctype html>
+<title>Template Example 2</title>
+<h1>Template Example 2</h1>
+
+<p>In this example, part of the content is modified programmatically in order to display the correct time at the moment the button was pressed.</p>
+<p>To achieve this a <code>querySelector</code> is used on the <code>cloned</code> document fragment (not on <code>document</code> as is more typically seen.)</p>
+
+<button id=b1>GO!</button>
+
+<template id=t1>
+  <p>The button was pressed at approximately <em>unknown</em>.</p>
+</template>
+
+<script>
+
+  const b1 = document.querySelector("#b1");
+  const t1 = document.querySelector("#t1");
+
+  b1.addEventListener("click", e => {
+    const cloned = t1.content.cloneNode(true);
+    const updateThis = cloned.querySelector("em");
+    updateThis.textContent = new Date().toLocaleTimeString();
+    document.body.append(cloned);
+  })
+</script>

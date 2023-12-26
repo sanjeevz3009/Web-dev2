@@ -1,0 +1,25 @@
+<!doctype html>
+<title>Ex0 Time-Created</title>
+
+<script>
+class TimeCreated extends HTMLElement {
+  constructor() {
+    super();
+    const shadow = this.attachShadow({ mode: 'closed' });
+    shadow.textContent = new Date().toLocaleTimeString();
+  }
+}
+customElements.define('time-created', TimeCreated);
+</script>
+
+<h1>Custom Element Ex0</h1>
+<h2>A <code>&lt;time-created&gt;</code> element</h2>
+
+<p>
+  In this example we define a <code>&lt;time-created&gt;</code>
+  custom element.  The element contains text that shows the time
+  it was created.
+
+<p>
+  The element is used here and it shows that this page was
+  loaded at <time-created></time-created>.
